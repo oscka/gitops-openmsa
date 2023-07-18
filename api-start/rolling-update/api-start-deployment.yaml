@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-start
+  namespace: fms    
+  
+  labels:
+    app: api-start
+    
+   
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api-start
+  template:
+    metadata:
+      
+      labels:
+        app: api-start     
+      
+
+    spec:
+      containers:
+        - name: api-start
+          image: 101440814867.dkr.ecr.ap-northeast-2.amazonaws.com/api-start
+          ports:
+          - name: http
+            containerPort: 8080

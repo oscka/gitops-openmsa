@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- api-auth-deployment.yaml
+- api-auth-svc.yaml
+- api-auth-ingress.yaml
+
+images:
+- name: 101440814867.dkr.ecr.ap-northeast-2.amazonaws.com/api-auth
+  newTag: 0.0.4

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-auth
+  namespace: fms    
+  
+  labels:
+    app: api-auth
+    
+   
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api-auth
+  template:
+    metadata:
+      
+      labels:
+        app: api-auth     
+      
+
+    spec:
+      containers:
+        - name: api-auth
+          image: 101440814867.dkr.ecr.ap-northeast-2.amazonaws.com/api-auth
+          ports:
+          - name: http
+            containerPort: 8080

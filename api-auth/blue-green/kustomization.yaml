@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- simple-api-rollout.yaml
+- simple-api-svc-active.yaml
+- simple-api-svc-preview.yaml
+- ingress-simple-api.yaml
+- ingress-preview-simple-api.yaml
+images:
+- name: skaqud/simple-api
+  newTag: RB0.0.12
