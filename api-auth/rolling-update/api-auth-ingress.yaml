@@ -4,17 +4,16 @@ metadata:
   name: api-auth-ingress
   namespace: openmsa
   annotations:
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
+    kubernetes.io/ingress.class: "nginx"
 spec:
-  ingressClassName: alb
   rules:
-    - http:
-        paths:
-          - pathType: Prefix
-            path: "/"
-            backend:
-              service:
-                name: api-auth-svc
-                port:
-                  number: 8080
+  - host: "dev-api-auth.openmsa.io"  # 접속하고자 하는 host명
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: api-auth-svc   # Service의 Name과 동일하게 맞춤
+            port:
+              number: 8080    # Service를 통해 노출된 port와 동일하게 맞춤
