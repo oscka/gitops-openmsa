@@ -8,4 +8,4 @@ resources:
 
 images:
 - name: oscka/api-auth
-  newTag: 0.0.4
+  newTag: 0.0.9
