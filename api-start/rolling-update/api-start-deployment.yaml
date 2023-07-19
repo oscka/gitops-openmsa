@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api-start
-  namespace: fms    
+  namespace: openmsa    
   
   labels:
     app: api-start
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: api-start
-          image: 101440814867.dkr.ecr.ap-northeast-2.amazonaws.com/api-start
+          image: oscka/api-start
           ports:
           - name: http
             containerPort: 8080
