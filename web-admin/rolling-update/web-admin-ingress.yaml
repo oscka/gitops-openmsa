@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-admin-ingress
+  namespace: openmsa
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: "dev-web-admin.openmsa.io"  # 접속하고자 하는 host명
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: web-admin-svc   # Service의 Name과 동일하게 맞춤
+            port:
+              number: 8080    # Service를 통해 노출된 port와 동일하게 맞춤
