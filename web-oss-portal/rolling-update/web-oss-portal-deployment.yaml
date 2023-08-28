@@ -1,29 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-admin
+  name: web-oss-portal
   namespace: openmsa    
   
   labels:
-    app: web-admin
+    app: web-oss-portal
     
    
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: web-admin
+      app: web-oss-portal
   template:
     metadata:
       
       labels:
-        app: web-admin
+        app: web-oss-portal
 
 
     spec:
       containers:
-        - name: web-admin
-          image: oscka/web-admin
+        - name: web-oss-portal
+          image: oscka/web-oss-portal
           ports:
           - name: http
             containerPort: 8080
