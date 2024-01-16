@@ -1,6 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+commonLabels:
+  backstage.io/kubernetes-id: starter
+  
 resources:
 - api-start-deployment.yaml
 - api-start-svc.yaml
