@@ -11,4 +11,4 @@ resources:
 
 images:
 - name: oscka/api-start
-  newTag: 0.0.10
+  newTag: 0.0.9
